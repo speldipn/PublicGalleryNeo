@@ -67,6 +67,7 @@ function SignInScreen({navigation, route}) {
                 onSubmit();
               }
             }}
+            returnKeyType={isSignUp ? 'next' : 'done'}
             secureTextEntry
           />
           {isSignUp && (
@@ -76,6 +77,7 @@ function SignInScreen({navigation, route}) {
               onChangeText={createChangeTextHandler('confirmPassword')}
               onSubmitEditing={onSubmit}
               secureTextEntry
+              returnKeyType="done"
             />
           )}
           <View style={styles.buttons}>
