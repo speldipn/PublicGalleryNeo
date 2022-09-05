@@ -8,6 +8,7 @@ production = ENV["PRODUCTION"] == "1"
 
 target 'PublicGalleryNeo' do
   config = use_native_modules!
+  pod 'GoogleUtilities', :modular_headers => true
 
   # Flags change depending on the env values.
   flags = get_default_flags()

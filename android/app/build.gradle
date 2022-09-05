@@ -140,6 +140,7 @@ android {
         versionCode 1
         versionName "1.0"
         buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
+        multiDexEnabled true
 
         if (isNewArchitectureEnabled()) {
             // We configure the NDK build only if you decide to opt-in for the New Architecture.
@@ -284,6 +285,8 @@ dependencies {
     } else {
         implementation jscFlavor
     }
+
+    implementation platform('com.google.firebase:firebase-bom:30.3.2')
 }
 
 if (isNewArchitectureEnabled()) {
@@ -318,3 +321,12 @@ def isNewArchitectureEnabled() {
     // - Set an environment variable `ORG_GRADLE_PROJECT_newArchEnabled=true`
     return project.hasProperty("newArchEnabled") && project.newArchEnabled == "true"
 }
+
+project.ext.vectoricons = [
+    iconFontNames: ["MaterialIcons.ttf"]
+]
+
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
