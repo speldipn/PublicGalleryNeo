@@ -24,15 +24,17 @@ function CameraButton() {
   };
 
   return (
-    <View style={[styles.wrapper, {bottom}]}>
-      <Pressable
-        android_ripple={{color: '#ffffff'}}
-        style={styles.circle}
-        onPress={onCameraPress}>
-        <Icon name="camera-alt" color="white" size={24} />
-      </Pressable>
+    <>
+      <View style={[styles.wrapper, {bottom}]}>
+        <Pressable
+          android_ripple={{color: '#ffffff'}}
+          style={styles.circle}
+          onPress={onCameraPress}>
+          <Icon name="camera-alt" color="white" size={24} />
+        </Pressable>
+      </View>
       <UploadModelModal visible={visible} onClose={onCameraClose} />
-    </View>
+    </>
   );
 }
 
