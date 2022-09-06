@@ -2,7 +2,12 @@ import React from 'react';
 import {Text, View, Pressable, StyleSheet, Modal} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-function UploadModelModal({visible, onClose}) {
+function UploadModelModal({
+  visible,
+  onClose,
+  onLaunchCamera,
+  onLaunchImageLibrary,
+}) {
   return (
     <Modal
       visible={visible}
@@ -13,7 +18,8 @@ function UploadModelModal({visible, onClose}) {
         <View style={styles.whiteBox}>
           <Pressable
             style={styles.actionButton}
-            android_ripple={{color: '#eee'}}>
+            android_ripple={{color: '#eee'}}
+            onPress={() => onLaunchCamera()}>
             <Icon
               name="camera-alt"
               color="#757575"
@@ -24,7 +30,8 @@ function UploadModelModal({visible, onClose}) {
           </Pressable>
           <Pressable
             style={styles.actionButton}
-            android_ripple={{color: '#eee'}}>
+            android_ripple={{color: '#eee'}}
+            onPress={() => onLaunchImageLibrary()}>
             <Icon name="photo" color="#757575" size={24} style={styles.icon} />
             <Text style={styles.actionText}>사진 선택하기</Text>
           </Pressable>
