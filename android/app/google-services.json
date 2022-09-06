@@ -37,6 +37,13 @@
             {
               "client_id": "586441945138-he1qcnk4bic8ls70bfqqudebp3f08e4t.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "586441945138-m807le6c0vmjf1uuj9c5231aaecvhcg6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "org.reactjs.native.example.PublicGalleryNeo"
+              }
             }
           ]
         }
