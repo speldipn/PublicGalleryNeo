@@ -6,6 +6,8 @@ import {useUserContext} from '../contexts/UserContext';
 import MainTab from './MainTab';
 import {getUser} from '../lib/users';
 import {subscribeAuth} from '../lib/auth';
+import UploadScreen from './UploadScreen';
+import IconRightButton from '../components/IconRightButton';
 
 const Stack = createNativeStackNavigator();
 
@@ -32,14 +34,21 @@ function RootStack() {
   return (
     <Stack.Navigator>
       <Stack.Screen
+        name="SignIn"
+        component={SignInScreen}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
         name="Main"
         component={MainTab}
         options={{headerShown: false}}
       />
       <Stack.Screen
-        name="SignIn"
-        component={SignInScreen}
-        options={{headerShown: false}}
+        name="Upload"
+        component={UploadScreen}
+        options={{
+          title: '새 게시물',
+        }}
       />
       <Stack.Screen
         name="Welcome"
