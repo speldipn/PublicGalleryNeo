@@ -8,6 +8,7 @@ import {getUser} from '../lib/users';
 import {subscribeAuth} from '../lib/auth';
 import UploadScreen from './UploadScreen';
 import IconRightButton from '../components/IconRightButton';
+import SplashScreen from 'react-native-splash-screen';
 
 const Stack = createNativeStackNavigator();
 
@@ -30,6 +31,10 @@ function RootStack() {
       setUser(profile);
     });
   }, [setUser]);
+
+  setTimeout(() => {
+    SplashScreen.hide();
+  }, 2000);
 
   return (
     <Stack.Navigator>
